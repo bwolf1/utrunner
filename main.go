@@ -49,9 +49,9 @@ func main() {
 		}
 
 		// Get searchDepth from config file and convert to integer
-		searchDepth, walkErr := strconv.Atoi(config["searchDepth"].(string))
-		if walkErr != nil {
-			log.Fatal(walkErr)
+		searchDepth, err := strconv.Atoi(config["searchDepth"].(string))
+		if err != nil {
+			log.Fatal(err)
 		}
 
 		if d.IsDir() {
@@ -64,11 +64,11 @@ func main() {
 			// Run the tests in the current directory and its subdirectories
 			cmd := exec.Command("go", "test", "-v", "./...")
 			cmd.Dir = path
-			output, walkErr := cmd.CombinedOutput()
+			output, err := cmd.CombinedOutput()
 
 			// Ignore exits resulting from no go files in the directory
-			if walkErr != nil && walkErr.Error() != "exit status 1" {
-				fmt.Println(walkErr)
+			if err != nil && err.Error() != "exit status 1" {
+				fmt.Println(err)
 			}
 
 			// Collect and display output for directories with go files only
