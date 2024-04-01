@@ -19,3 +19,7 @@
 
 # Go workspace file
 go.work
+
+# Application files
+utrunner-report.txt
+utrunner
