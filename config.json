@@ -1,0 +1,8 @@
+{
+    "basePath": "../repos",
+    "searchDepth": "2",
+    "directoriesToSkip": [
+        "../repos/.vscode",
+        "../repos/front-end-app"
+    ]
+}
