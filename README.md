@@ -23,9 +23,6 @@ go build
 
 ## Run
 
-UTRunner is meant to be run from the top level directory that you want to walk
-and run tests in (including sub-directories).
-
 ```shell
 ./utrunner
 ```
