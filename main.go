@@ -34,10 +34,12 @@ func main() {
 		directoriesToSkip = append(directoriesToSkip, dir.(string))
 	}
 
-	// Set path to the current directory
+	// Set the base path from the config and initialize reportData
 	path := config["basePath"].(string)
 	reportData := []byte{}
-	dirCount := -1 // Start at -1 to exclude the root directory
+	
+	// Start at -1 to exclude the root directory
+	dirCount := -1
 
 	// Walk through each directory in the path
 	err = filepath.WalkDir(path, func(path string, d os.DirEntry, walkErr error) error {
